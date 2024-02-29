@@ -11,8 +11,6 @@ class Product(models.Model):
     price = models.FloatField()
     min_users = models.IntegerField()
     max_users = models.IntegerField()
-    
-    # author = models.ForeignKey(User, on_delete=models.CASCADE)   # on_delete here is set so when user is deleted, so are his posts
 
     def __str__(self):
         return self.title
@@ -21,4 +19,10 @@ class Product(models.Model):
     def date_msk(self):
         return self.start_date_time.astimezone(ZoneInfo("Europe/Moscow")).strftime('%d.%m.%Y %H:%M %z%Z')
 
+
+class Lesson(models.Model):
+    title = models.CharField(max_length=200)
+    video_link = models.CharField(max_length=200)
+    course = models.ForeignKey(Product, on_delete=models.CASCADE)
+    
 
