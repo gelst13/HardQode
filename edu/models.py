@@ -1,5 +1,7 @@
 from django.db import models
-from django.utils import timezone
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import pytz
 
 
 class Product(models.Model):
@@ -14,5 +16,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+    
+    @property
+    def date_msk(self):
+        return self.start_date_time.astimezone(ZoneInfo("Europe/Moscow")).strftime('%d.%m.%Y %H:%M %z%Z')
 
 
