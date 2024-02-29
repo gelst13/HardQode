@@ -4,17 +4,15 @@ from django.shortcuts import render
 products = [
     {
         'author': 'CoreyMS',
-        'name': 'Django crash course',
-        'start_date': '01-03-2024',
-        'start_time': '10:00',
-        'price': '3000'
+        'title': 'Django crash course',
+        'start_date_time': '01-03-2024 10:00 MSK',
+        'price': '3000.00'
     },
     {
         'author': 'CoreyMS',
-        'name': 'Flask crash course',
-        'start_date': '01-03-2024',
-        'start_time': '10:00',
-        'price': '3000'
+        'title': 'Flask crash course',
+        'start_date_time': '01-03-2024 10:00 MSK',
+        'price': '3000.00'
     },
 ]
 
