@@ -1,0 +1,23 @@
+{% extends "edu/base.html" %}
+{% block content %}
+
+
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ product.author }}</a>
+      <small class="text-muted">Старт курса: {{ product.date_msk }} </small>
+    </div>
+    <h2><a class="article-title" href="#">{{ product.title }}</a></h2>
+    <p class="article-content">Цена: {{ product.price }} рублей</p>
+    <div class="article-metadata">
+      <h3>Описание:</h3>
+        {% for lesson in lessons %}
+        <a href="{{ lesson.video_link }}"> {{ lesson.title }} </a>
+        {% endfor %}
+    </div>
+  </div>
+</article>
+
+
+{% endblock content %}
