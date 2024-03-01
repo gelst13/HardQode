@@ -16,6 +16,10 @@ class Product(models.Model):
         return self.title
     
     @property
+    def number_of_lessons(self):
+        return Lesson.objects.filter(course=self).all().count()
+    
+    @property
     def date_msk(self):
         return self.start_date_time.astimezone(ZoneInfo("Europe/Moscow")).strftime('%d.%m.%Y %H:%M %z%Z')
 

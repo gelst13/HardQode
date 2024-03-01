@@ -9,7 +9,8 @@
             </div>
             <!-- <h2><a class="article-title" href="#">{{ product.title }}</a></h2>-->
             <h2><a class="article-title" href="{% url 'product-detail' product.id %}">{{ product.title }}</a></h2>
-            <p class="article-content">Цена: {{ product.price }} рублей</p>
+            <p>содержит {{ product.number_of_lessons }} видео-урока</p>
+              <p class="article-content">Цена: {{ product.price }} рублей</p>
           </div>
         </article>
     {% endfor %}

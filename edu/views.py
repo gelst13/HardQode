@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, ListView
+from django.views.generic import ListView
 from .models import Product, Lesson
 from .forms import BuyForm
 
@@ -40,6 +40,3 @@ def buy_course(request, pk):
         
         return redirect('profile')
     return render(request, 'edu/buy_course.html', context)
-
-
-
