@@ -10,8 +10,10 @@
     </div>
     <h2><a class="article-title" href="#">{{ product.title }}</a></h2>
     <p class="article-content">Цена: {{ product.price }} рублей</p>
+    <h3><a class="article-title" href="{% url 'buy-course' product.id %}"> Купить </a></h3>
     <div class="article-metadata">
-      <h3>Описание:</h3>
+      <p>Описание: Данный курс состоит из {{ lessons|length }} видео.</p>
+
         {% for lesson in lessons %}
         <p><a href="{{ lesson.video_link }}"> {{ lesson.title }} </a></p>
         {% endfor %}
