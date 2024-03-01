@@ -5,7 +5,7 @@ from edu.models import Team, Product
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    team = models.OneToOneField(Team, models.SET_NULL, null=True, blank=True)
+    team = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f'{self.user.username} профиль'
