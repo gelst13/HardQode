@@ -1,0 +1,10 @@
+{% extends "edu/base.html" %}
+{% block content %}
+
+<h2 class="article-metadata">Oплата за курс {{ product.title }} будет списана:</h2>
+<form action="{% url 'buy-course' product.id %}" method="POST">{% csrf_token %}
+
+<button type="submit">Ok</button>
+</form>
+
+{% endblock content %}

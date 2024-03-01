@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
 from .models import Product, Lesson
+from .forms import BuyForm
 
 
 # def home(request):
@@ -29,6 +30,16 @@ def product_detail(request, pk):
     }
     return render(request, 'edu/product_detail.html', context)
 
+
+def buy_course(request, pk):
+    # if request.user.is_authenticated:
+    form = BuyForm()
+    context = {'form': form,
+               'product': Product.objects.get(id=pk)}
+    if request.method == 'POST':
+        
+        return redirect('profile')
+    return render(request, 'edu/buy_course.html', context)
 
 
 
