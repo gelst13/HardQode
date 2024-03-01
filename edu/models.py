@@ -24,5 +24,9 @@ class Lesson(models.Model):
     title = models.CharField(max_length=200)
     video_link = models.CharField(max_length=200)
     course = models.ForeignKey(Product, on_delete=models.CASCADE)
-    
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=10)
+    course = models.ForeignKey(Product, on_delete=models.CASCADE)
 
