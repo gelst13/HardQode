@@ -22,16 +22,13 @@ def about(request):
     return render(request, 'edu/about.html', {'title': 'О нас'})
 
 
-def product_detail(request, id):
+def product_detail(request, pk):
     context = {
-        'product': Product.objects.all()[id],
-        'lessons': Lesson.objects.filter(course=Product.objects.all()[id]).all()
+        'product': Product.objects.get(id=pk),
+        'lessons': Lesson.objects.filter(course=Product.objects.get(id=pk)).all()
     }
-    return render(request, 'edu/home.html', context)
+    return render(request, 'edu/product_detail.html', context)
 
 
-class ProductDetailView(DetailView):
-    model = [Product, Lesson]
-    context_object_name = 'product'
 
 
