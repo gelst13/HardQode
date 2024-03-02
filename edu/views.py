@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import Product, Lesson
 from .forms import BuyForm
+from .utils import EduSys
 
 
 # def home(request):
@@ -37,6 +38,6 @@ def buy_course(request, pk):
     context = {'form': form,
                'product': Product.objects.get(id=pk)}
     if request.method == 'POST':
-        
+        EduSys.enroll_on_course(product_id=pk, user_id=request.user.id)
         return redirect('profile')
     return render(request, 'edu/buy_course.html', context)

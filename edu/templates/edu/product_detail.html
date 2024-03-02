@@ -13,10 +13,13 @@
 
     <div class="article-metadata">
       <p>Описание: Данный курс состоит из {{ lessons|length }} видео.</p>
-
+      {% if user.is_authenticated %}
         {% for lesson in lessons %}
         <p><a href="{{ lesson.video_link }}"> {{ lesson.title }} </a></p>
         {% endfor %}
+      {% else %}
+        Видео-уроки доступны для пользователей, оплативших курс и зачисленных в группу.
+      {% endif %}
     </div>
   </div>
 </article>
