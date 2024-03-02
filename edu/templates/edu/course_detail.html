@@ -12,14 +12,11 @@
     <p class="article-content">Цена: {{ course.price }} рублей</p>
 
     <div class="article-metadata">
-      <p>Описание: Данный курс состоит из {{ lessons|length }} видео.</p>
-      {% if user.is_authenticated %}
-        {% for lesson in lessons %}
-        <p><a href="{{ lesson.video_link }}"> {{ lesson.title }} </a></p>
-        {% endfor %}
-      {% else %}
-        Видео-уроки доступны для пользователей, оплативших курс и зачисленных в группу.
-      {% endif %}
+        <h3>Описание: Данный курс состоит из {{ course.number_of_lessons }} видео.</h3>
+        <p>(Видео-уроки доступны для пользователей, оплативших курс и зачисленных в группу.)</p>
+        <p>Перейти к <a class="article-title" href="{% url 'course-video' course.id %}">видео-урокам</a></p>
+
+
     </div>
   </div>
 </article>

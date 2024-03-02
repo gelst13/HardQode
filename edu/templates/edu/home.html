@@ -7,11 +7,10 @@
               <a class="mr-2" href="#">{{ course.author }}</a>
               <small class="text-muted">Старт курса: {{ course.date_msk }} </small>
             </div>
-            <!-- <h2><a class="article-title" href="#">{{ course.title }}</a></h2>-->
             <h2><a class="article-title" href="{% url 'course-detail' course.id %}">{{ course.title }}</a></h2>
-            <p>содержит {{ course.number_of_lessons }} видео-урока</p>
-              <p class="article-content">Цена: {{ course.price }} рублей</p>
-              <h3><a class="article-title" href="{% url 'buy-course' course.id %}"> Купить </a></h3>
+            <p>содержит {{ course.number_of_lessons }} видео-урока.</p>
+            <p class="article-content">Цена: {{ course.price }} рублей</p>
+            <h3><a class="article-title" href="{% url 'buy-course' course.id %}"> Купить </a></h3>
           </div>
         </article>
     {% endfor %}

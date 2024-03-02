@@ -1,0 +1,19 @@
+{% extends "edu/base.html" %}
+{% block content %}
+
+
+<article class="media content-section">
+    {% if objects%}
+    <h2>VIDEO: </h2>
+    {% endif%}
+  <div class="media-body">
+    <div class="article-metadata">
+        {% for object in objects %}
+        <p><a href="{{ object.video_link }}"> {{ object.title }} </a></p>
+        {% endfor %}
+
+    </div>
+  </div>
+</article>
+
+{% endblock content %}
