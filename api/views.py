@@ -15,6 +15,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 class LessonViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Lessons to be viewed or edited.
+    Реализовать API с выведением списка уроков по конкретному продукту к которому пользователь имеет доступ.
     """
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer

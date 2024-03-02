@@ -1,17 +1,17 @@
 {% extends "edu/base.html" %}
 {% block content %}
-    {% for product in products %}
+    {% for course in courses %}
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ product.author }}</a>
-              <small class="text-muted">Старт курса: {{ product.date_msk }} </small>
+              <a class="mr-2" href="#">{{ course.author }}</a>
+              <small class="text-muted">Старт курса: {{ course.date_msk }} </small>
             </div>
-            <!-- <h2><a class="article-title" href="#">{{ product.title }}</a></h2>-->
-            <h2><a class="article-title" href="{% url 'product-detail' product.id %}">{{ product.title }}</a></h2>
-            <p>содержит {{ product.number_of_lessons }} видео-урока</p>
-              <p class="article-content">Цена: {{ product.price }} рублей</p>
-              <h3><a class="article-title" href="{% url 'buy-course' product.id %}"> Купить </a></h3>
+            <!-- <h2><a class="article-title" href="#">{{ course.title }}</a></h2>-->
+            <h2><a class="article-title" href="{% url 'course-detail' course.id %}">{{ course.title }}</a></h2>
+            <p>содержит {{ course.number_of_lessons }} видео-урока</p>
+              <p class="article-content">Цена: {{ course.price }} рублей</p>
+              <h3><a class="article-title" href="{% url 'buy-course' course.id %}"> Купить </a></h3>
           </div>
         </article>
     {% endfor %}

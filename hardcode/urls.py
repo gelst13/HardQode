@@ -36,7 +36,6 @@ urlpatterns = [
     # path('edu/', include('edu.urls')),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
-    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
 # urlpatterns += router.urls
